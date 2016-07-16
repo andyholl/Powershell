@@ -1,0 +1,1 @@
+Compare-Object -ReferenceObject (Get-Content C:\Users\Lori\Documents\PCapps.txt) -DifferenceObject (Get-Content C:\Users\Lori\Documents\LAPTOPapps.txt)
