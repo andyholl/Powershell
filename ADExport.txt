@@ -1,0 +1,3 @@
+Get-ADGroupmember -identity INSERTGROUP -recursive |Get-ADuser  -properties * | Where {$_.Enabled -eq $true} |select SamAccountName, EmployeeID, givenName, sn, mail, telephoneNumber, department, title, division, msExchAssistantName, streetAddress, postalCode |Export-csv -path c:\FILEPATGH.csv -NoTypeInformation
+Import-Csv c:\FILEPATH.csv | Foreach {$_.EmployeeID = "$($_.SamAccountName)";$_} |
+     Export-Csv \\TargetServer\TargetPath/TargetFileName.csv -NoTypeInformation
